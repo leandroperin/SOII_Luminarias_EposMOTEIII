@@ -30,7 +30,7 @@ template<> struct Traits<Build>
     static const unsigned int MODEL = eMote3;
 
     static const unsigned int CPUS = 1;
-    static const unsigned int NODES = 1; // > 1 => NETWORKING
+    static const unsigned int NODES = 2; // > 1 => NETWORKING
 };
 
 
@@ -182,7 +182,7 @@ template<> struct Traits<Network>: public Traits<void>
     static const unsigned int TIMEOUT = 10; // s
 
     // This list is positional, with one network for each NIC in Traits<NIC>::NICS
-    typedef LIST<IP> NETWORKS;
+    typedef LIST<ELP> NETWORKS;
 };
 
 template<> struct Traits<ELP>: public Traits<Network>
